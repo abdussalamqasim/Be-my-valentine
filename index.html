@@ -46,7 +46,7 @@
         #noBtn {
             background-color: #adb5bd;
             color: white;
-            position: absolute;
+            /* position: absolute; - Removed to flow naturally initially */
         }
     </style>
 </head>
@@ -69,6 +69,9 @@
         const noBtn = document.getElementById('noBtn');
 
         function moveButton() {
+            // Make button absolute so it can move freely
+            noBtn.style.position = 'absolute';
+
             // Shrink the No button
             noCount++;
             let newScale = Math.max(0.2, 1 - (noCount * 0.1));
